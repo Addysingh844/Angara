@@ -22,9 +22,12 @@ try:
         pass
 
     # Step 2: Search for a product
-    # search_box = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.NAME, "q")))
-    # search_box.send_keys("diamond ring")
-    # search_box.send_keys(Keys.RETURN)
+    driver.find_element(By.CLASS_NAME, "px1.mb0.inline-block.lh0.js-slideout-open").click()
+    time.sleep(4)
+    driver.find_element(By.CLASS_NAME, "searchbox__input.mb0.mt5.no-bg-color").click()
+    search_box = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "gl-d-searchbox-input")))
+    search_box.send_keys("24KT (999) Goddess Lakshmi Yellow Gold Coin")
+    search_box.send_keys(Keys.RETURN)
 
     # Step 3: Select the product from the list
     time.sleep(5)
